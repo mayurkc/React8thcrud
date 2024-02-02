@@ -69,8 +69,15 @@ function Registration()
 
     }
     function insertData(e){
+        setInput({
+            FirstName:" ",
+            LastName:" ",
+            Password:" ",
+            Mobilenumber:" "
+          } ) 
         e.preventDefault();
         formgetdata(e);
+        
         return (
             setData((old)=>{
             return[
@@ -79,12 +86,11 @@ function Registration()
             }),
             showset(false),
                 setInput({
-                    FirstName:" ",
-                    LastName:" ",
-                    Password:" ",
-                    Mobilenumber:" "
+                    FirstName:"",
+                     LastName:" ",
+                     Password:" ",
+                    Mobilenumber:" ",
                   } ) 
-            
             )         
     }
 
@@ -97,7 +103,13 @@ function Registration()
         tempdata[index]=temp;
         return(
             showset(false),
-            setData(tempdata)
+            setData(tempdata),
+            setInput({
+                FirstName:"",
+                 LastName:" ",
+                 Password:" ",
+                Mobilenumber:" ",
+              } ) 
         )
 
     }
